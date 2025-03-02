@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="header">
+    <h1 class="main-title">Gerador de CPF</h1>
+  </div>
+  <div class="sections-wrapper">
+    <div class="right-section">
+      <h2 class="section-title">
+        Gerar com pontuação?
+        <div class="info-icon" title="Ex: 000.000.000-00">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+        </div>
+      </h2>
+      <div class="options">
+        <label class="radio-option">
+          <input type="radio" name="punctuation" [value]="true" [(ngModel)]="usePunctuation">
+          Sim
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="punctuation" [value]="false" [(ngModel)]="usePunctuation">
+          Não
+        </label>
+      </div>
+      
+      <button class="generate-btn" (click)="generateCpf()">
+        Gerar CPF
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path>
+          <path d="M21 3v5h-5"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="left-section">
+      <h2>CPF Gerado</h2>
+      <div class="cpf-result">
+        <div class="input-container">
+          <input 
+            class="cpf-input" 
+            [value]="generatedCpf" 
+            placeholder="000.000.000-00"
+            readonly>
+          <button class="copy-btn" (click)="copyToClipboard()" *ngIf="generatedCpf">
+            <svg *ngIf="!copied" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <svg *ngIf="copied" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+</div>
+</div>

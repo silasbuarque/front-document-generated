@@ -1,0 +1,210 @@
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  padding: 2rem;
+}
+
+.main-title {
+  font-size: 36px;
+  font-weight: 600;
+  color: white;
+  margin-top: 10rem;
+  margin-left: -8rem;
+}
+
+.sections-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 300px;
+  color: white;
+}
+
+/* Divisão lateral */
+.left-section, .right-section {
+  flex: 1; /* Divide a tela igualmente */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Linha divisória */
+.divider {
+  width: 1px;
+  height: 230px;
+  background-color: rgba(188, 187, 187, 0.5);
+}
+
+.left-section h2 {
+  font-size: 1rem;
+  text-align: left;
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.cpf-result {
+  width: 220px; /* Reduzindo a largura */
+  margin-bottom: 1rem;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  gap: 8px;
+}
+
+.cpf-input {
+  flex: 1;
+  height: 100%;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+}
+
+.copy-btn {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.copy-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: white;
+  transition: all 0.2s;
+}
+
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.copy-btn:hover svg {
+  stroke: #5454D4;
+}
+
+/* Botão de gerar CPF */
+.generate-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Espaço entre a imagem e o texto */
+  background-color: #5454D4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.generate-btn img {
+  width: 20px; /* Ajuste o tamanho conforme necessário */
+  height: 20px;
+}
+
+.generate-btn:hover {
+  background-color: #5454D4;
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.info-icon {
+  display: flex;
+  align-items: center;
+  cursor: help;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.2s;
+}
+
+.info-icon:hover {
+  color: white;
+}
+
+/* Estilização do tooltip nativo */
+[title] {
+  position: relative;
+}
+
+[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 10;
+  margin-bottom: 5px;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem; /* Adicionando margem inferior para manter espaçamento do botão */
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.875rem; /* ou 14px */
+  font-weight: 400;
+}
+
+.custom-radio {
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.radio-option input[type="radio"]:checked + .custom-radio::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #5454D4;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
